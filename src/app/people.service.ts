@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 @Injectable()
 export class PeopleService {
     person: Person
@@ -11,9 +10,10 @@ export class PeopleService {
       "firstname": "Klaus",
       "gender": "m",
       "height": 181
-
     }
     this.person = pFromJson
+    setTimeout(() => this.person.lastname = "Changed", 3000)
+
 }
 }
 class PersonImpl implements Person{
@@ -22,7 +22,6 @@ class PersonImpl implements Person{
   lastname: string
   gender: string
   height: number
-
   constructor(personId: number, lastname: string, firstname: string, gender:string, height:number){
     this.personId = personId
     this.firstname = firstname
@@ -31,7 +30,6 @@ class PersonImpl implements Person{
     this.height = height
   }
 }
-
 export interface Person{
   personId: number
   firstname: string

@@ -1,7 +1,13 @@
-<p>
-  {{person.lastname}}
+{{person.lastname}}
 
 
   <input type="text" [(ngModel)] = "person.lastname" />
   <input type="text" [(ngModel)] = "person.firstname"/>
-</p>
+
+  <hr />
+
+  <ul>
+    <li *ngFor="let p of people">
+        {{p.lastname}}
+    </li>
+  </ul>

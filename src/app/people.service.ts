@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 @Injectable()
 export class PeopleService {
+    people: Array<Person> = new Array()
     person: Person
   constructor() {
+
     let p: Person = new PersonImpl(1, "Sawitzki", "Rainer", "m", 183)
     let pFromJson: Person = {
       "personId": 1,
@@ -11,7 +13,10 @@ export class PeopleService {
       "gender": "m",
       "height": 181
     }
+
     this.person = pFromJson
+    this.people.push(p)
+    this.people.push(pFromJson)
     setTimeout(() => this.person.lastname = "Changed", 3000)
 
 }

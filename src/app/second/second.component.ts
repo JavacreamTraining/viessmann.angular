@@ -8,9 +8,11 @@ import {PeopleService, Person} from '../people.service'
 })
 export class SecondComponent implements OnInit {
   person: Person
+  people: Array<Person>
   //peopleService: PeopleService
   constructor(readonly peopleService :PeopleService) {
     this.person = peopleService.person
+    this.people = peopleService.people
   }
 
   ngOnInit() {

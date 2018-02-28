@@ -4,7 +4,17 @@ export class PeopleService {
     people: Array<Person> = new Array()
     person: Person
   constructor() {
+    this.person = {
+      "personId": 1,
+      "lastname": "Sawitzki",
+      "firstname": "Werner",
+      "gender": "m",
+      "height": 181
+    }
 
+
+}
+  loadPeople():Array<Person>{
     let p: Person = new PersonImpl(1, "Sawitzki", "Rainer", "m", 183)
     let pFromJson: Person = {
       "personId": 1,
@@ -17,8 +27,8 @@ export class PeopleService {
     this.person = pFromJson
     this.people.push(p)
     this.people.push(pFromJson)
-    setTimeout(() => this.person.lastname = "Changed", 3000)
 
+    return this.people
 }
 }
 class PersonImpl implements Person{

@@ -12,10 +12,14 @@ export class SecondComponent implements OnInit {
   //peopleService: PeopleService
   constructor(readonly peopleService :PeopleService) {
     this.person = peopleService.person
-    this.people = peopleService.people
   }
 
   ngOnInit() {
+  }
+
+  loadData(){
+    this.people = this.peopleService.loadPeople()
+
   }
 
 }

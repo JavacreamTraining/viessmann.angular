@@ -8,6 +8,6 @@
 
   <ul>
     <li *ngFor="let p of people">
-        {{p.lastname}}
+      <person-detail-component [the_person] = p></person-detail-component>
     </li>
   </ul>
